@@ -1,17 +1,50 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
 import './index.css';
+import { StrictMode } from 'react';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createRoot } from "react-dom/client";
+import { Provider } from "react-redux";
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import store from './app/store';
+import Signup from './components/Signup';
+import UserFeed from './pages/UserFeed';
+import UserProfile from './pages/UserProfile';
+import ExploreFeed from './pages/ExploreFeed';
+import Bookmarks from './pages/Bookmarks';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />
+  },
+  {
+    path: "/user/signup",
+    element: <Signup />
+  },
+  {
+    path: "/userfeed",
+    element: <UserFeed />
+  },
+  {
+    path: "/profile",
+    element: <UserProfile />
+  },
+  {
+    path: "/explorefeed",
+    element: <ExploreFeed />
+  },
+  {
+    path: "/users/bookmarks",
+    element: <Bookmarks />
+  },
+])
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <StrictMode>
+    <Provider store={store}>
+    <RouterProvider router={router} />
+    </Provider>
+  </StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
