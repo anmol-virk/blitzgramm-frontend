@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Blitzgramm (Social Media Platform)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack social media app with Redux for state management, user-driven feed sorting(trending, recent), bookmarks and a responsive UI built with React.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Login
 
-### `npm start`
+**Guest**
+Username: `tony@email.com`
+Password: `tony123`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
+## Quick Start
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+git clone https://github.com/anmol-virk/blitzgramm-frontend.git
+cd <blitzgramm-frontend>
+npm install
+npm start
+```
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies
+- React JS
+- Node JS
+- Express
+- MongoDB
+- JWT
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
+**Profile Page**
+- An editable Bio section with profile picture.
+- List of all the Posts by User and their basic details with a sidebar to navigate further.
+- To the right side various Users which you can follow or unfollow.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Userfeed**
+- List of all the posts with user-driven feed sorting(trending, latest).
+- Images can be Liked, Bookmarked, Edited or Delete.
+- To the right, a Section to create new posts (choosing file, likes and publish them).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Explorefeed**
+- List of all the Posts by all Users.
 
-### `npm run eject`
+**Bookmarks**
+- List of all the Bookmarked Posts.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## API Reference
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### ***GET /api/posts***
+List of all Posts created by User.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### ***POST posts/api/user/post***
+Adds a new Post.
 
-## Learn More
+### ***PUT /api/posts/edit/:postId***
+Edit and Update a Post by its ID.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### ***POST /api/posts/like/:postId***
+Like a Post by ID.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### ***POST /api/users/follow/:followUserId***
+Follow a User by its ID.
 
-### Code Splitting
+### ***POST /api/users/unfollow/:followUserId***
+Unfollow a User by its ID.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For bugs or feature request, please reach out to anmolthisside@gmail.com
